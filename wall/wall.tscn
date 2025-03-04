@@ -1,10 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://bh8d52ew8wvbw"]
 
-[ext_resource type="Script" path="res://wall/wall.gd" id="1_1tiaw"]
+[ext_resource type="Script" uid="uid://c1ujb0r4didlq" path="res://wall/wall.gd" id="1_1tiaw"]
 
 [node name="Wall" type="StaticBody2D"]
 script = ExtResource("1_1tiaw")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(1, -1, -1, -1, -1, 1, 1, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)

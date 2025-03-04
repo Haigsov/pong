@@ -6,7 +6,7 @@ extends StaticBody2D
 
 
 func _ready() -> void:
-	collision_polygon_2d.polygon = polygon_2d.polygon
+	polygon_2d.polygon = collision_polygon_2d.polygon
 	polygon_2d.polygon = draw_rectangle(10, 100)
 
 func draw_rectangle(height, width):
