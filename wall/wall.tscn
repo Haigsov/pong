@@ -9,4 +9,5 @@ script = ExtResource("1_1tiaw")
 polygon = PackedVector2Array(1, -1, -1, -1, -1, 1, 1, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+unique_name_in_owner = true
 polygon = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)
