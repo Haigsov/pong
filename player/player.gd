@@ -1,16 +1,30 @@
 extends CharacterBody2D
 
+@export var is_player1:bool = true
+var dir:float
+var speed:int = 200
+var movement_keys:Dictionary[String, Variant]
 
-var speed = 200
+const p1_controls:Dictionary[String, Variant] = {
+	"up": "ui_up",
+	"down": "ui_down",
+}
+
+const p2_controls:Dictionary[String, Variant] = {
+	"up" : "player_2_up", 
+	"down" : "player_2_down"
+}
+
+func _ready() -> void:
+	if is_player1:
+		movement_keys = p1_controls
+	else:
+		movement_keys = p2_controls
+
 func _physics_process(_delta: float) -> void:
 	player_move()
-	
-	#if Input.is_action_pressed("player 1 move up"):
-		#position.y -= 10 
-	#if Input.is_action_pressed("player 1 move down"):
-		#position.y += 10
 
-func player_move():
-	var dir:float = Input.get_axis("player 1 move up", "player 1 move down")
+func player_move() -> void:
+	dir = Input.get_axis(movement_keys["up"], movement_keys["down"])
 	velocity.y = dir * speed
 	move_and_slide()
