@@ -11,8 +11,8 @@ const p1_controls:Dictionary[String, Variant] = {
 }
 
 const p2_controls:Dictionary[String, Variant] = {
-	"up" : "player_2_up", 
-	"down" : "player_2_down"
+	"up" : "player 2 up", 
+	"down" : "player 2 down"
 }
 
 func _ready() -> void:

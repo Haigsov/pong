@@ -7,8 +7,4 @@ extends StaticBody2D
 
 func _ready() -> void:
 	polygon_2d.polygon = collision_polygon_2d.polygon
-	polygon_2d.polygon = draw_rectangle(10, 100)
-
-func draw_rectangle(height, width):
-	var area = height * width
-	return area
+	

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c1ujb0r4didlq" path="res://wall/wall.gd" id="1_1tiaw"]
 
 [node name="Wall" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_1tiaw")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
