@@ -10,7 +10,9 @@ var multiplier:float = 1
 #func _ready() -> void:
 	#collision_shape_2d.
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	velocity = Vector2(100, -100) * multiplier
-	move_and_slide()
+	var collision:KinematicCollision2D = move_and_collide(velocity * delta)
+	if collision:
+		print(collision.get_collider().name)
 	
