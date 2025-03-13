@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://csgswohrfo6n1"]
+[gd_scene load_steps=4 format=3 uid="uid://csgswohrfo6n1"]
 
 [ext_resource type="Script" uid="uid://t4hkil5xit8y" path="res://ball/ball.gd" id="1_6plaf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o65s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6plaf"]
 
 [node name="Ball" type="CharacterBody2D"]
 collision_layer = 2
@@ -14,3 +16,8 @@ shape = SubResource("RectangleShape2D_1o65s")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_6plaf")
