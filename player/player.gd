@@ -17,9 +17,9 @@ const p2_controls:Dictionary[String, Variant] = {
 
 func _ready() -> void:
 	if is_player1:
-		movement_keys = p1_controls
-	else:
 		movement_keys = p2_controls
+	else:
+		movement_keys = p1_controls
 
 func _physics_process(_delta: float) -> void:
 	player_move()

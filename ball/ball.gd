@@ -27,7 +27,7 @@ func move_ball() -> void:
 
 #func _on_area_2d_area_entered(area: Area2D) -> void:
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: CollisionObject2D) -> void:
 	print("is working")
 	if is_on_floor():
 		velocity.y = velocity.y * -1
