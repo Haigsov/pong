@@ -6,7 +6,7 @@ extends CharacterBody2D
 var horizontal_speed:int = 100
 var vertical_speed:int
 var dir:Vector2 = Vector2(45.0, 90.0)
-var multiplier:float = 1
+var multiplier:float = 1.25
 
 func _ready() -> void:
 	if (randi() % 2) == 0:
@@ -25,11 +25,9 @@ func move_ball() -> void:
 	#var collision:KinematicCollision2D = move_and_collide(velocity * delta)
 	move_and_slide()
 
-#func _on_area_2d_area_entered(area: Area2D) -> void:
-
 func _on_area_2d_body_entered(body: CollisionObject2D) -> void:
-	print("is working")
-	if is_on_floor():
+	if body is StaticBody2D:
 		velocity.y = velocity.y * -1
-	elif is_on_ceiling():
-		velocity.y = velocity.y * -1
+	elif body is CharacterBody2D:
+		velocity.x = velocity.x * -1 * multiplier
+		print(velocity.x)
