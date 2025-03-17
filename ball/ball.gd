@@ -17,7 +17,7 @@ func _ready() -> void:
 	area_2d.body_entered.connect(_on_area_2d_body_entered)
 	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_ball()
 	
 
@@ -26,6 +26,7 @@ func move_ball() -> void:
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: CollisionObject2D) -> void:
+	print("touch")
 	if body is StaticBody2D:
 		velocity.y = velocity.y * -1
 	elif body is CharacterBody2D:
