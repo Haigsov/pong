@@ -23,3 +23,17 @@ position = Vector2(10, 350)
 [node name="Player 2" parent="." instance=ExtResource("3_xwkvk")]
 position = Vector2(1142, 350)
 is_player1 = false
+
+[node name="P1 Scoreboard" type="Label" parent="."]
+offset_left = 170.0
+offset_top = 107.0
+offset_right = 214.0
+offset_bottom = 130.0
+text = "GDFD"
+
+[node name="P2 Scoreboard" type="Label" parent="."]
+offset_left = 988.0
+offset_top = 103.0
+offset_right = 1029.0
+offset_bottom = 126.0
+text = "FDFD"
