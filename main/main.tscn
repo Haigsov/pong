@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c70qwedbfl1xg"]
+[gd_scene load_steps=6 format=3 uid="uid://c70qwedbfl1xg"]
 
+[ext_resource type="Script" uid="uid://cb2bxq13vjhl4" path="res://main/main.gd" id="1_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://bh8d52ew8wvbw" path="res://wall/wall.tscn" id="1_53q0u"]
 [ext_resource type="PackedScene" uid="uid://csgswohrfo6n1" path="res://ball/ball.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://gb22m8rv7mrt" path="res://player/player.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://brkddolko3gw3" path="res://goal/goal.tscn" id="4_c651c"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_3wy1v")
 
 [node name="Wall" parent="." instance=ExtResource("1_53q0u")]
 position = Vector2(597, 11)
@@ -26,22 +28,24 @@ position = Vector2(1142, 350)
 is_player1 = false
 
 [node name="P1 Scoreboard" type="Label" parent="."]
+unique_name_in_owner = true
 offset_left = 170.0
 offset_top = 107.0
 offset_right = 214.0
 offset_bottom = 130.0
-text = "GDFD"
 
 [node name="P2 Scoreboard" type="Label" parent="."]
+unique_name_in_owner = true
 offset_left = 988.0
 offset_top = 103.0
 offset_right = 1029.0
 offset_bottom = 126.0
-text = "FDFD"
 
 [node name="Goal" parent="." instance=ExtResource("4_c651c")]
+unique_name_in_owner = true
 position = Vector2(-73, 326)
 is_player1 = true
 
 [node name="Goal2" parent="." instance=ExtResource("4_c651c")]
+unique_name_in_owner = true
 position = Vector2(1237, 328)
