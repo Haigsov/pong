@@ -44,7 +44,6 @@ offset_bottom = 126.0
 [node name="Goal" parent="." instance=ExtResource("4_c651c")]
 unique_name_in_owner = true
 position = Vector2(-73, 326)
-is_player1 = true
 
 [node name="Goal2" parent="." instance=ExtResource("4_c651c")]
 unique_name_in_owner = true

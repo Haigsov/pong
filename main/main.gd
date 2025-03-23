@@ -6,6 +6,8 @@ extends Node2D
 @onready var goal2: Area2D = %Goal2
 var p1_score:int = 0
 var p2_score:int = 0
+var new_ball:CharacterBody2D
+const ball_resource:PackedScene = preload("res://ball/ball.tscn")
 
 func _ready() -> void:
 	p1_scoreboard.text = str(p1_score)
@@ -23,3 +25,8 @@ func despawn_ball_goal2(body:PhysicsBody2D) -> void:
 	body.queue_free()
 	p2_score += 1
 	p2_scoreboard.text = str(p2_score)
+
+func add_ball() -> void:
+	new_ball = ball_resource.instantiate()
+	self.add_child(new_ball)
+	self.get_node()
