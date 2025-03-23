@@ -7,7 +7,7 @@ extends Node2D
 var p1_score:int = 0
 var p2_score:int = 0
 var new_ball:CharacterBody2D
-const ball_resource:PackedScene = preload("res://ball/ball.tscn")
+const ball_instance:PackedScene = preload("res://ball/ball.tscn")
 
 func _ready() -> void:
 	p1_scoreboard.text = str(p1_score)
@@ -16,17 +16,14 @@ func _ready() -> void:
 	goal2.body_entered.connect(despawn_ball_goal2)
 
 func despawn_ball_goal1(body:PhysicsBody2D) -> void:
-	body.queue_free()
-	p1_score += 1
-	p1_scoreboard.text = str(p1_score)
+	p2_score += 1
+	p2_scoreboard.text = str(p2_score)
+	body.position = Vector2(574, 341)
+	body.randomize_velocity()
 
 
 func despawn_ball_goal2(body:PhysicsBody2D) -> void:
-	body.queue_free()
-	p2_score += 1
-	p2_scoreboard.text = str(p2_score)
-
-func add_ball() -> void:
-	new_ball = ball_resource.instantiate()
-	self.add_child(new_ball)
-	self.get_node()
+	p1_score += 1
+	p1_scoreboard.text = str(p1_score)
+	body.position = Vector2(574, 341)
+	body.randomize_velocity()
