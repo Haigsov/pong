@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var is_player1:bool = true
 @export var is_ai:bool = false
+@onready var timer: Timer = $Timer
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 var dir:float
 var speed:int = 200
 var movement_keys:Dictionary[String, Variant]
@@ -29,3 +31,9 @@ func player_move() -> void:
 	dir = Input.get_axis(movement_keys["up"], movement_keys["down"])
 	velocity.y = dir * speed
 	move_and_slide()
+
+func disable_player_collision() -> void:
+	collision_shape_2d.disabled = true
+	print()
+	await timer.start(0.2)
+	collision_shape_2d.disabled = false

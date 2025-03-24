@@ -16,3 +16,5 @@ shape = SubResource("RectangleShape2D_n6fhj")
 [node name="Polygon2D" type="Polygon2D" parent="."]
 unique_name_in_owner = true
 polygon = PackedVector2Array(-10, -31, 10, -31, 10, 36, -10, 36)
+
+[node name="Timer" type="Timer" parent="."]

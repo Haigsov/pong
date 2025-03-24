@@ -21,7 +21,6 @@ func despawn_ball_goal1(body:PhysicsBody2D) -> void:
 	body.position = Vector2(574, 341)
 	body.randomize_velocity()
 
-
 func despawn_ball_goal2(body:PhysicsBody2D) -> void:
 	p1_score += 1
 	p1_scoreboard.text = str(p1_score)
