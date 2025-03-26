@@ -18,11 +18,14 @@ func _ready() -> void:
 func despawn_ball_goal1(body:PhysicsBody2D) -> void:
 	p2_score += 1
 	p2_scoreboard.text = str(p2_score)
-	body.position = Vector2(574, 341)
-	body.randomize_velocity()
+	reset_ball(body)
+
 
 func despawn_ball_goal2(body:PhysicsBody2D) -> void:
 	p1_score += 1
 	p1_scoreboard.text = str(p1_score)
+	reset_ball(body)
+
+func reset_ball(body:PhysicsBody2D) -> void:
 	body.position = Vector2(574, 341)
 	body.randomize_velocity()
