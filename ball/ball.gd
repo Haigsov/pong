@@ -25,7 +25,8 @@ func _on_area_2d_body_entered(body: CollisionObject2D) -> void:
 		print("y = %.2f" % velocity.y)
 		velocity.y = velocity.y * -1
 	elif body is CharacterBody2D:
-		body.collision_shape_2d.disabled = true
+		print(body.get_instance_id())
+		body.disable_player()
 		body.timer.start()
 		velocity.x = velocity.x * -1 * multiplier
 		print("x = %.2f" % velocity.x)
