@@ -30,6 +30,7 @@ func _on_area_2d_body_entered(body: CollisionObject2D) -> void:
 		velocity.x = velocity.x * -1 * multiplier
 		print("x = %.2f" % velocity.x)
 
+#randomize velocity
 func randomize_velocity() -> void:
 	if (randi() % 2) == 0:
 		horizontal_speed = 100
