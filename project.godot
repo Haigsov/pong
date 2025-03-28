@@ -50,6 +50,7 @@ gdscript/warnings/untyped_declaration=2
 2d_physics/layer_2="Ball"
 2d_physics/layer_3="Wall"
 2d_physics/layer_4="Goal"
+2d_physics/layer_5="Nothingness"
 
 [rendering]
 

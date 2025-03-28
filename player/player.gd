@@ -19,9 +19,9 @@ const p2_controls:Dictionary[String, Variant] = {
 }
 
 func _ready() -> void:
-	timer.wait_time = 2
-	timer.one_shot = true
-	timer.timeout.connect(renable_collision)
+	#timer.wait_time = 2
+	#timer.one_shot = true
+	#timer.timeout.connect(renable_collision)
 	if is_player1:
 		movement_keys = p1_controls
 	else:
@@ -35,10 +35,10 @@ func player_move() -> void:
 	velocity.y = dir * speed
 	move_and_slide()
 	
-func disable_player() -> void:
-	collision_shape_2d.disabled = true
-
-func renable_collision() -> void:
-	print("renable player collision")
-	print(get_instance_id())
-	collision_shape_2d.disabled = false
+#func disable_player() -> void:
+	#collision_shape_2d.disabled = true
+	#print("disable")
+#
+#func renable_collision() -> void:
+	#collision_shape_2d.disabled = false
+	#print("renable player collision")
