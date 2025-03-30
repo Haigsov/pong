@@ -24,9 +24,15 @@ func _ready() -> void:
 		movement_keys = p2_controls
 
 func _physics_process(_delta: float) -> void:
-	player_move()
+	if not is_ai:
+		player_move()
+	else:
+		ai_chase_ball()
 
 func player_move() -> void:
 	dir = Input.get_axis(movement_keys["up"], movement_keys["down"])
 	velocity.y = dir * speed
 	move_and_slide()
+	
+func ai_chase_ball() -> void:
+	pass

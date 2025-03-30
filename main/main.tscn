@@ -22,10 +22,13 @@ position = Vector2(574, 341)
 
 [node name="Player 1" parent="." instance=ExtResource("3_xwkvk")]
 position = Vector2(10, 350)
+is_player1 = true
+is_ai = false
 
 [node name="Player 2" parent="." instance=ExtResource("3_xwkvk")]
 position = Vector2(1142, 350)
 is_player1 = false
+is_ai = false
 
 [node name="P1 Scoreboard" type="Label" parent="."]
 unique_name_in_owner = true

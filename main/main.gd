@@ -6,8 +6,8 @@ extends Node2D
 @onready var goal2: Area2D = %Goal2
 var p1_score:int = 0
 var p2_score:int = 0
-var new_ball:CharacterBody2D
-const ball_instance:PackedScene = preload("res://ball/ball.tscn")
+#var new_ball:CharacterBody2D
+#const ball_instance:PackedScene = preload("res://ball/ball.tscn")
 
 func _ready() -> void:
 	p1_scoreboard.text = str(p1_score)
