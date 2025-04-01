@@ -18,6 +18,7 @@ const p2_controls:Dictionary[String, Variant] = {
 }
 
 func _ready() -> void:
+	print(get_parent().get_node("Ball"))
 	if is_player1:
 		movement_keys = p1_controls
 	else:
@@ -35,4 +36,4 @@ func player_move() -> void:
 	move_and_slide()
 	
 func ai_chase_ball() -> void:
-	pass
+	print(get_tree().ball)
