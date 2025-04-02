@@ -6,6 +6,7 @@ extends CharacterBody2D
 var dir:float
 var speed:int = 200
 var movement_keys:Dictionary[String, Variant]
+var ball:PhysicsBody2D
 
 const p1_controls:Dictionary[String, Variant] = {
 	"up" : "player 2 up", 
@@ -36,4 +37,4 @@ func player_move() -> void:
 	move_and_slide()
 	
 func ai_chase_ball() -> void:
-	print(get_tree().ball)
+	ball = get_parent().get_node("Ball")
