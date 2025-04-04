@@ -6,7 +6,7 @@ extends CharacterBody2D
 var dir:float
 var speed:int = 200
 var movement_keys:Dictionary[String, Variant]
-var ball:PhysicsBody2D = get_parent().get_node("Ball")
+var ball:PhysicsBody2D
 
 const p1_controls:Dictionary[String, Variant] = {
 	"up" : "player 2 up", 
@@ -19,7 +19,8 @@ const p2_controls:Dictionary[String, Variant] = {
 }
 
 func _ready() -> void:
-	print(get_parent().get_node("Ball"))
+	ball = get_parent().get_node("Ball")
+	print(ball)
 	if is_player1:
 		movement_keys = p1_controls
 	else:
@@ -37,4 +38,5 @@ func player_move() -> void:
 	move_and_slide()
 	
 func ai_chase_ball() -> void:
-	velocity.y = ball.position.y
+	dir = ball.position.y - position.y
+	velocity.y = dir * speed
