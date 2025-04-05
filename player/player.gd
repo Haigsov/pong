@@ -20,13 +20,13 @@ const p2_controls:Dictionary[String, Variant] = {
 
 func _ready() -> void:
 	ball = get_parent().get_node("Ball")
-	print(ball)
 	if is_player1:
 		movement_keys = p1_controls
 	else:
 		movement_keys = p2_controls
 
 func _physics_process(_delta: float) -> void:
+	print(ball.position)
 	if not is_ai:
 		player_move()
 	else:
@@ -38,5 +38,6 @@ func player_move() -> void:
 	move_and_slide()
 	
 func ai_chase_ball() -> void:
-	dir = ball.position.y - position.y
-	velocity.y = dir * speed
+	position.y = ball.position.y
+	#velocity.y = dir * 1
+	#move_and_slide()
