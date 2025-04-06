@@ -26,7 +26,6 @@ func _ready() -> void:
 		movement_keys = p2_controls
 
 func _physics_process(_delta: float) -> void:
-	print(ball.position)
 	if not is_ai:
 		player_move()
 	else:
@@ -38,6 +37,6 @@ func player_move() -> void:
 	move_and_slide()
 	
 func ai_chase_ball() -> void:
-	position.y = ball.position.y
-	#velocity.y = dir * 1
-	#move_and_slide()
+	var t:float = 0.05
+	position.y = position.lerp(ball.position, t).y
+	move_and_slide()
